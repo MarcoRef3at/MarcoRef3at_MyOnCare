@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "superAdmin",
+    "level": 0
+  },
+  {
+    "id": 2,
+    "name": "admin",
+    "level": 1
+  },
+  {
+    "id": 3,
+    "name": "user",
+    "level": 2
+  }
+]

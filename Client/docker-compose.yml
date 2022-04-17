@@ -1,0 +1,12 @@
+version: "3.4"
+
+services:
+  myoncare:
+    image: myoncareclient
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      REACT_APP_SERVER_URL: doc_container_2
+    ports:
+      - 3000:3000

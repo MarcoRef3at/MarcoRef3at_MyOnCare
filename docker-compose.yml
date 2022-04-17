@@ -1,0 +1,41 @@
+version: "3.4"
+
+services:
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+  doc_container_1:
+    container_name: doc_container_1
+    image: myoncareclient
+    build:
+      context: ./Client/ .
+      dockerfile: ./Dockerfile
+    environment:
+      REACT_APP_SERVER_URL: http://localhost:5000
+    ports:
+      - 3000:3000
+    depends_on:
+      - "redis"
+      - "mysql"
+  doc_container_2:
+    container_name: doc_container_2
+    image: myoncare-backend
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      REDIS_HOST: redis
+      DB_HOST: mysql
+    ports:
+      - 5000:5000
+    depends_on:
+      - "doc_container_1"
+      - "redis"
+      - "mysql"

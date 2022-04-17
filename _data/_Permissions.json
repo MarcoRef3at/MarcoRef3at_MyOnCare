@@ -1,0 +1,40 @@
+[
+  {
+    "name": "getUsers",
+    "module": "users",
+    "permissionType": "user",
+    "label": "Get All Users",
+    "setByDefault": true
+  },
+  {
+    "name": "getUser",
+    "module": "users",
+    "permissionType": "admin",
+    "setByDefault": true,
+    "label": "Get Single User"
+  },
+  {
+    "name": "addUser",
+    "module": "users",
+    "permissionType": "admin",
+    "label": "Add User"
+  },
+  {
+    "name": "updateUser",
+    "module": "users",
+    "permissionType": "admin",
+    "label": "Update User"
+  },
+  {
+    "name": "updateUserPermissions",
+    "module": "users",
+    "label": "Update User's Permissions",
+    "permissionType": "admin"
+  },
+  {
+    "name": "deleteUser",
+    "module": "users",
+    "permissionType": "admin",
+    "label": "Delete User"
+  }
+]
